@@ -48,7 +48,7 @@ No local setup required - the bot runs entirely in GitHub Actions!
 ### Local Development
 ```bash
 git clone https://github.com/nagsujosh/contexto-solver-agent.git
-cd playContexto
+cd contexto-solver-agent
 pip install -r requirements.txt
 python main.py  # Plays one game immediately
 ```
@@ -304,7 +304,7 @@ No local setup, no servers, no hassle!
 ```bash
 # 1. Clone and setup
 git clone https://github.com/nagsujosh/contexto-solver-agent.git
-cd playContexto
+cd contexto-solver-agent
 python -m venv venv
 source venv/bin/activate  # Linux/Mac | venv\Scripts\activate (Windows)
 
@@ -432,7 +432,7 @@ logging.basicConfig(level=logging.DEBUG)
 ## Project Structure
 
 ```
-playContexto/
+contexto-solver-agent/
 ├── Core Intelligence
 │   ├── main.py                    # Game solver logic
 │   ├── automation_script.py       # Daily automation
@@ -564,7 +564,7 @@ See real-time performance, game trajectories, and detailed statistics!
 
 **Automated daily at 10:00 AM UTC**
 
-[Report Issues](https://github.com/your-username/playContexto/issues) • [Suggest Features](https://github.com/your-username/playContexto/discussions) • [Contribute](https://github.com/your-username/playContexto/pulls)
+[Report Issues](https://github.com/nagsujosh/contexto-solver-agent/issues) • [Suggest Features](https://github.com/nagsujosh/contexto-solver-agent/discussions) • [Contribute](https://github.com/nagsujosh/contexto-solver-agent/pulls)
 
 </div>
 
