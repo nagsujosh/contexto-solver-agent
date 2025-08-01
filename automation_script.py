@@ -42,6 +42,57 @@ def format_duration(seconds: float) -> str:
         remaining_minutes = int((seconds % 3600) // 60)
         return f"{hours}h {remaining_minutes}m"
 
+def get_game_statistics():
+    """Get current game statistics from all results."""
+    # Find all result files
+    result_files = glob.glob("results/game_*.jsonl")
+    result_files.sort()
+    
+    if not result_files:
+        return {
+            'total_games': 0,
+            'successful_games': 0,
+            'success_rate': 0.0,
+            'avg_duration': 0.0,
+            'avg_guesses': 0.0,
+            'latest_game': None
+        }
+    
+    # Load all results
+    all_results = []
+    for file in result_files:
+        results = load_jsonl_file(file)
+        all_results.extend(results)
+    
+    # Sort by game_id
+    all_results.sort(key=lambda x: x.get('game_id', 0))
+    
+    if not all_results:
+        return {
+            'total_games': 0,
+            'successful_games': 0,
+            'success_rate': 0.0,
+            'avg_duration': 0.0,
+            'avg_guesses': 0.0,
+            'latest_game': None
+        }
+    
+    total_games = len(all_results)
+    successful_games = sum(1 for r in all_results if r.get('successful', r.get('best_score', 0) >= 0.999))
+    avg_duration = sum(r.get('duration_seconds', 0) for r in all_results) / total_games
+    avg_guesses = sum(len(r.get('trajectory', [])) for r in all_results) / total_games
+    success_rate = (successful_games / total_games) * 100
+    latest_game = all_results[-1] if all_results else None
+    
+    return {
+        'total_games': total_games,
+        'successful_games': successful_games,
+        'success_rate': success_rate,
+        'avg_duration': avg_duration,
+        'avg_guesses': avg_guesses,
+        'latest_game': latest_game
+    }
+
 def generate_markdown_report() -> str:
     """Generate a comprehensive markdown report from all game results."""
     
@@ -183,6 +234,87 @@ def generate_markdown_report() -> str:
     
     return "\n".join(report)
 
+def update_readme_with_stats():
+    """Update README.md with current game statistics."""
+    stats = get_game_statistics()
+    
+    if not os.path.exists("README.md"):
+        print("README.md not found, skipping update")
+        return
+    
+    # Read current README.md
+    with open("README.md", "r") as f:
+        content = f.read()
+    
+    # Update success rate badge
+    import re
+    content = re.sub(
+        r'!\[Success Rate\]\(https://img\.shields\.io/badge/success_rate-[^)]+\)',
+        f'![Success Rate](https://img.shields.io/badge/success_rate-{stats["success_rate"]:.1f}%25-green.svg)',
+        content
+    )
+    
+    # Update games played badge
+    content = re.sub(
+        r'!\[Games Played\]\(https://img\.shields\.io/badge/games_played-[^)]+\)',
+        f'![Games Played](https://img.shields.io/badge/games_played-{stats["total_games"]}-blue.svg)',
+        content
+    )
+    
+    # Update latest success section
+    if stats["latest_game"]:
+        latest = stats["latest_game"]
+        word = latest.get('best_word', 'Unknown')
+        game_id = latest.get('game_id', 'N/A')
+        duration = format_duration(latest.get('duration_seconds', 0))
+        guesses = len(latest.get('trajectory', []))
+        
+        # Update latest success line
+        content = re.sub(
+            r'### \*\*Latest Success\*\*: Game #\d+ → \*\*"[^"]+"\*\* in [^(]+ \(\d+ guesses\)',
+            f'### **Latest Success**: Game #{game_id} → **"{word}"** in {duration} ({guesses} guesses)',
+            content
+        )
+        
+        # Update performance line
+        content = re.sub(
+            r'### \*\*Performance\*\*: [^•]+ • [^•]+ average solve time',
+            f'### **Performance**: {stats["success_rate"]:.1f}% success rate • {format_duration(stats["avg_duration"])} average solve time',
+            content
+        )
+    
+    # Update statistics table
+    table_pattern = r'\| \*\*Success Rate\*\* \| \*\*[^|]+\*\* \([^)]+\) \|'
+    table_replacement = f'| **Success Rate** | **{stats["success_rate"]:.1f}%** ({stats["successful_games"]}/{stats["total_games"]} games) |'
+    content = re.sub(table_pattern, table_replacement, content)
+    
+    table_pattern = r'\| \*\*Average Solve Time\*\* \| \*\*[^|]+\*\* \|'
+    table_replacement = f'| **Average Solve Time** | **{format_duration(stats["avg_duration"])}** |'
+    content = re.sub(table_pattern, table_replacement, content)
+    
+    table_pattern = r'\| \*\*Games Played\*\* \| \*\*[^|]+\*\* \|'
+    table_replacement = f'| **Games Played** | **{stats["total_games"]} total** |'
+    content = re.sub(table_pattern, table_replacement, content)
+    
+    table_pattern = r'\| \*\*Average Guesses\*\* \| \*\*[^|]+\*\* \|'
+    table_replacement = f'| **Average Guesses** | **{stats["avg_guesses"]:.1f} per game** |'
+    content = re.sub(table_pattern, table_replacement, content)
+    
+    if stats["latest_game"]:
+        latest = stats["latest_game"]
+        word = latest.get('best_word', 'Unknown')
+        game_id = latest.get('game_id', 'N/A')
+        
+        table_pattern = r'\| \*\*Latest Success\*\* \| \*\*[^|]+\*\* \|'
+        table_replacement = f'| **Latest Success** | **Game #{game_id}: "{word}"** |'
+        content = re.sub(table_pattern, table_replacement, content)
+    
+    # Write updated content back
+    with open("README.md", "w") as f:
+        f.write(content)
+    
+    print("README.md updated with current statistics!")
+
 def main():
     """Main automation script."""
     print("Starting daily Contexto game automation...")
@@ -206,6 +338,11 @@ def main():
             f.write(markdown_content)
         
         print("Markdown report updated!")
+        
+        # Update README.md with current statistics
+        print("Updating README.md with current statistics...")
+        update_readme_with_stats()
+        
         print("Automation completed successfully!")
         
     except Exception as e:
