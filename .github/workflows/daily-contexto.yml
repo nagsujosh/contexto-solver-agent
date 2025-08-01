@@ -2,8 +2,8 @@ name: Daily Contexto Game Bot
 
 on:
   schedule:
-    # Run daily at 8:00 AM UTC (adjust timezone as needed)
-    - cron: '0 8 * * *'
+    # Run daily at 10:00 AM UTC (adjust timezone as needed)
+    - cron: '0 10 * * *'
   workflow_dispatch: # Allow manual triggering
 
 jobs:
