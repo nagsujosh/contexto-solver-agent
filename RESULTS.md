@@ -3,10 +3,10 @@
 This repository contains an automated Contexto game solver that runs daily at 8:00 AM UTC.
 
 ## Statistics
-- **Total Games Played:** 4
-- **Success Rate:** 75.0% (3/4)
-- **Average Duration:** 44.0s
-- **Average Guesses per Game:** 234.8
+- **Total Games Played:** 3
+- **Success Rate:** 100.0% (3/3)
+- **Average Duration:** 54.3s
+- **Average Guesses per Game:** 290.7
 - **Latest Game:** #1048 - **deodorant**
 
 ## Recent Games
@@ -74,28 +74,6 @@ This repository contains an automated Contexto game solver that runs daily at 8:
 325. **rural** (score: 0.7082)
 326. **countryside** (score: 0.6269)
 327. **farmers** (score: 1.0000)
-
-</details>
-
-### Game #2 - 2025-08-01 11:08:55
-**Status:** PARTIAL | **Answer:** **material** | **Score:** 0.7896 | **Duration:** 13.3s | **Guesses:** 67
-
-<details>
-<summary>Click to view guess trajectory</summary>
-
- 1. **crybaby** (score: 0.0000)
- 2. **foreclosure** (score: 0.0000)
- 3. **disciplines** (score: 0.0224)
- 4. **extracellular** (score: 0.0000)
- 5. **electrodes** (score: 0.0000)
-    ...
-    *(57 guesses omitted)*
-    ...
-63. **steel** (score: 0.0991)
-64. **metal** (score: 0.1390)
-65. **woven** (score: 0.0939)
-66. **vinyl** (score: 0.1261)
-67. **garment** (score: 0.0158)
 
 </details>
 
