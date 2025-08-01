@@ -1,0 +1,6 @@
+sentence-transformers 
+wordfreq 
+scikit-learn 
+scipy
+requests
+numpy

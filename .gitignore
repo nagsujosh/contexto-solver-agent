@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+._*
+
+# Temporary files
+*.tmp
+*.log
+
+# Model cache (sentence-transformers)
+.cache/
+models/
+sentence_transformers_cache/
+
+# Generated data files
+contexto_vocab.db
+bad_words.json
+
+# Environment variables
+.env
