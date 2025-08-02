@@ -64,7 +64,6 @@ python main.py  # Plays one game immediately
 | **Games Played** | **5 total** |
 | **Average Guesses** | **273.2 per game** |
 | **Latest Success** | **Game #1049: "boardwalk"** |
-| **Automation** | **100% hands-free** |
 
 *[View detailed results and game trajectories →](RESULTS.md)*
 
@@ -180,7 +179,7 @@ neighbors = argsort(-similarities, axis=1)[:, :100]
 
 ### GitHub Actions Workflow
 
-The bot runs completely hands-free using GitHub Actions:
+The bot runs completely using GitHub Actions:
 
 ```yaml
 name: Daily Contexto Game Bot
@@ -530,23 +529,10 @@ Each game produces a detailed record:
 
 | Feature | Status | Impact |
 |---------|--------|--------|
-| **Multi-language Support** | Planned | Support Spanish, Portuguese, etc. |
 | **Ensemble Methods** | Research | Combine multiple embedding models |
 | **Reinforcement Learning** | Concept | Q-learning for strategy optimization |
-| **Real-time Analysis** | Planned | Live performance monitoring |
 | **Semantic Graphs** | Concept | Knowledge graph integration |
 | **Speed Optimization** | Research | Faster convergence algorithms |
-
-### **AI/ML Concepts Demonstrated**
-
-This project showcases advanced techniques:
-
-- **NLP**: Semantic embeddings and similarity search
-- **Reinforcement Learning**: Multi-armed bandit algorithms (UCB)
-- **Optimization**: Simulated annealing and temperature scheduling  
-- **Search Algorithms**: Exploration vs exploitation balance
-- **MLOps**: Automated ML deployment and monitoring
-- **Data Engineering**: Efficient caching and persistence
 
 ---
 
@@ -564,7 +550,7 @@ See real-time performance, game trajectories, and detailed statistics!
 
 **Automated daily at 10:00 AM UTC**
 
-[Report Issues](https://github.com/nagsujosh/contexto-solver-agent/issues) • [Suggest Features](https://github.com/nagsujosh/contexto-solver-agent/discussions) • [Contribute](https://github.com/nagsujosh/contexto-solver-agent/pulls)
+[Report Issues](https://github.com/nagsujosh/contexto-solver-agent/issues) • [Contribute](https://github.com/nagsujosh/contexto-solver-agent/pulls)
 
 </div>
 
