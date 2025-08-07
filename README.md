@@ -5,8 +5,8 @@
 ![Python](https://img.shields.io/badge/python-3.9+-blue.svg)
 ![GitHub Actions](https://img.shields.io/badge/automation-GitHub_Actions-orange.svg)
 ![AI](https://img.shields.io/badge/AI-Sentence_Transformers-purple.svg)
-![Success Rate](https://img.shields.io/badge/success_rate-66.7%25-green.svg)
-![Games Played](https://img.shields.io/badge/games_played-9-blue.svg)
+![Success Rate](https://img.shields.io/badge/success_rate-60.0%25-green.svg)
+![Games Played](https://img.shields.io/badge/games_played-10-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 **An intelligent, fully-automated bot that solves [Contexto](https://contexto.me/) word puzzles daily using advanced machine learning techniques.**
@@ -15,8 +15,8 @@
 
 ---
 
-### **Latest Success**: Game #1051 → **"bass"** in 1m 34.1s (508 guesses)
-### **Performance**: 66.7% success rate • 58.9s average solve time
+### **Latest Success**: Game #1051 → **"notes"** in 1m 33.9s (510 guesses)
+### **Performance**: 60.0% success rate • 1m 2.4s average solve time
 
 ---
 
@@ -59,11 +59,11 @@ python main.py  # Plays one game immediately
 
 | Metric | Current Performance |
 |--------|-------------------|
-| **Success Rate** | **66.7%** (6/9 games) |
-| **Average Solve Time** | **58.9s** |
-| **Games Played** | **9 total** |
-| **Average Guesses** | **335.7 per game** |
-| **Latest Success** | **Game #1051: "bass"** |
+| **Success Rate** | **60.0%** (6/10 games) |
+| **Average Solve Time** | **1m 2.4s** |
+| **Games Played** | **10 total** |
+| **Average Guesses** | **353.1 per game** |
+| **Latest Success** | **Game #1051: "notes"** |
 
 *[View detailed results and game trajectories →](RESULTS.md)*
 
