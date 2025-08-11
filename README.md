@@ -5,8 +5,8 @@
 ![Python](https://img.shields.io/badge/python-3.9+-blue.svg)
 ![GitHub Actions](https://img.shields.io/badge/automation-GitHub_Actions-orange.svg)
 ![AI](https://img.shields.io/badge/AI-Sentence_Transformers-purple.svg)
-![Success Rate](https://img.shields.io/badge/success_rate-61.5%25-green.svg)
-![Games Played](https://img.shields.io/badge/games_played-13-blue.svg)
+![Success Rate](https://img.shields.io/badge/success_rate-57.1%25-green.svg)
+![Games Played](https://img.shields.io/badge/games_played-14-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 **An intelligent, fully-automated bot that solves [Contexto](https://contexto.me/) word puzzles daily using advanced machine learning techniques.**
@@ -15,8 +15,8 @@
 
 ---
 
-### **Latest Success**: Game #1052 → **"fries"** in 29.6s (159 guesses)
-### **Performance**: 61.5% success rate • 57.8s average solve time
+### **Latest Success**: Game #1053 → **"lettering"** in 1m 8.4s (507 guesses)
+### **Performance**: 57.1% success rate • 58.6s average solve time
 
 ---
 
@@ -59,11 +59,11 @@ python main.py  # Plays one game immediately
 
 | Metric | Current Performance |
 |--------|-------------------|
-| **Success Rate** | **61.5%** (8/13 games) |
-| **Average Solve Time** | **57.8s** |
-| **Games Played** | **13 total** |
-| **Average Guesses** | **325.5 per game** |
-| **Latest Success** | **Game #1052: "fries"** |
+| **Success Rate** | **57.1%** (8/14 games) |
+| **Average Solve Time** | **58.6s** |
+| **Games Played** | **14 total** |
+| **Average Guesses** | **338.5 per game** |
+| **Latest Success** | **Game #1053: "lettering"** |
 
 *[View detailed results and game trajectories →](RESULTS.md)*
 
