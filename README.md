@@ -5,8 +5,8 @@
 ![Python](https://img.shields.io/badge/python-3.9+-blue.svg)
 ![GitHub Actions](https://img.shields.io/badge/automation-GitHub_Actions-orange.svg)
 ![AI](https://img.shields.io/badge/AI-Sentence_Transformers-purple.svg)
-![Success Rate](https://img.shields.io/badge/success_rate-60.0%25-green.svg)
-![Games Played](https://img.shields.io/badge/games_played-15-blue.svg)
+![Success Rate](https://img.shields.io/badge/success_rate-56.2%25-green.svg)
+![Games Played](https://img.shields.io/badge/games_played-16-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
 **An intelligent, fully-automated bot that solves [Contexto](https://contexto.me/) word puzzles daily using advanced machine learning techniques.**
@@ -15,8 +15,8 @@
 
 ---
 
-### **Latest Success**: Game #1053 → **"deeds"** in 1m 17.8s (418 guesses)
-### **Performance**: 60.0% success rate • 59.9s average solve time
+### **Latest Success**: Game #1054 → **"sparkly"** in 1m 4.2s (508 guesses)
+### **Performance**: 56.2% success rate • 1m 0.1s average solve time
 
 ---
 
@@ -59,11 +59,11 @@ python main.py  # Plays one game immediately
 
 | Metric | Current Performance |
 |--------|-------------------|
-| **Success Rate** | **60.0%** (9/15 games) |
-| **Average Solve Time** | **59.9s** |
-| **Games Played** | **15 total** |
-| **Average Guesses** | **343.8 per game** |
-| **Latest Success** | **Game #1053: "deeds"** |
+| **Success Rate** | **56.2%** (9/16 games) |
+| **Average Solve Time** | **1m 0.1s** |
+| **Games Played** | **16 total** |
+| **Average Guesses** | **354.1 per game** |
+| **Latest Success** | **Game #1054: "sparkly"** |
 
 *[View detailed results and game trajectories →](RESULTS.md)*
 
