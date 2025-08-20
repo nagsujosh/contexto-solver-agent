@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.env
+.vscode/
+.idea/
+.DS_Store
+._*
+*.tmp
+*.log
+.cache/
+models/
+sentence_transformers_cache/
+glove.6B.300d.txt
