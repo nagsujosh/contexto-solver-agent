@@ -1,0 +1,29 @@
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+env/
+.env
+.vscode/
+.idea/
+.DS_Store
+._*
+*.tmp
+*.log
+.cache/
+models/
+sentence_transformers_cache/
+
+# GloVe embeddings (download separately — see README)
+glove.6B.300d.txt
+
+# Runtime state (generated during gameplay)
+results/
+bad_words.json
+current_game_id.txt
+last_successful_game_id.txt
+centroid_bias.npy
+centroid_ch.npy
+centroid_th.npy
+centroid_matrix.npy
+centroid_meta.json
